@@ -1,0 +1,36 @@
+[project]
+name = "sample-quant"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "rahul007-bit", email = "yadavrahul8141@yahoo.com" }]
+dependencies = [
+    "sentence-transformers>=2.4.0",
+    "requests>=2.31.0",
+    "biopython>=1.83",
+    "torch>=2.2.1",
+    "transformers>=4.38.1",
+    "pandas>=2.2.1",
+    "pyarrow>=15.0.0",
+    "numpy>=1.26.4",
+    "dask>=2024.2.1",
+    "dask-expr>=0.5.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+main = "sample_quant:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sample_quant"]
